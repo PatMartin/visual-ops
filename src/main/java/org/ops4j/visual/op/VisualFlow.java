@@ -33,8 +33,7 @@ public class VisualFlow extends BaseOp<VisualFlow>
 {
   @Option(names = { "-o", "--output" },
       description = "The output location." + "  Default = flow.svg")
-  private @Getter
-  @Setter String                             outputLocation = "file(flow.svg)";
+  private @Getter @Setter String             outputLocation = "file(flow.svg)";
 
   @Option(names = { "-s", "--src" },
       description = "The source path." + "  Default = /src")
@@ -122,12 +121,12 @@ public class VisualFlow extends BaseOp<VisualFlow>
     }
   }
 
-  public VisualFlow close() throws OpsException
+  public List<OpData> close() throws OpsException
   {
     Map<String, Boolean> traversed = new HashMap<String, Boolean>();
     if (getEntry() == null)
     {
-      //sw.write("* root\n");
+      // sw.write("* root\n");
       for (String entry : mapping.keySet())
       {
         if (!traversed.containsKey(entry))
@@ -148,7 +147,7 @@ public class VisualFlow extends BaseOp<VisualFlow>
     {
       throw new OpsException(ex);
     }
-    return this;
+    return OpData.emptyList();
   }
 
   public static void main(String args[]) throws OpsException
