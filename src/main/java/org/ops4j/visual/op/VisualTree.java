@@ -28,7 +28,7 @@ import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
 @AutoService(Op.class)
-@Command(name = "viz:tree", description = "Render a visual tree of the data.")
+@Command(name = "viz-tree", description = "Render a visual tree of the data.")
 public class VisualTree extends BaseOp<VisualTree>
 {
   @Option(names = { "-o", "--output" },
@@ -45,7 +45,7 @@ public class VisualTree extends BaseOp<VisualTree>
 
   public VisualTree()
   {
-    super("viz:tree");
+    super("viz-tree");
   }
 
   public VisualTree open() throws OpsException

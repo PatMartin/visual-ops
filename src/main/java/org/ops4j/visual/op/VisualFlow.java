@@ -27,7 +27,7 @@ import net.sourceforge.plantuml.SourceStringReader;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
-@AutoService(Op.class) @Command(name = "viz:flow",
+@AutoService(Op.class) @Command(name = "viz-flow",
     description = "Render a transition tree of the data.")
 public class VisualFlow extends BaseOp<VisualFlow>
 {
@@ -58,7 +58,7 @@ public class VisualFlow extends BaseOp<VisualFlow>
 
   public VisualFlow()
   {
-    super("viz:flow");
+    super("viz-flow");
   }
 
   public VisualFlow open() throws OpsException

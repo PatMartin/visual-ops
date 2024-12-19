@@ -24,7 +24,7 @@ import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
 @AutoService(Op.class)
-@Command(name = "viz:sequence", description = "Render a sequence diagram.")
+@Command(name = "viz-sequence", description = "Render a sequence diagram.")
 public class VisualSequence extends BaseOp<VisualSequence>
 {
   @Option(names = { "-o", "--output" },
@@ -54,7 +54,7 @@ public class VisualSequence extends BaseOp<VisualSequence>
 
   public VisualSequence()
   {
-    super("viz:sequence");
+    super("viz-sequence");
   }
 
   public VisualSequence open() throws OpsException
